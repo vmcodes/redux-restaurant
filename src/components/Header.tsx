@@ -86,10 +86,9 @@ const useStyles = makeStyles((theme) => ({
 
 type StoreProps = {
   name: string;
-  phone: string;
 };
 
-const Header: React.FC<StoreProps> = ({ name, phone }) => {
+const Header: React.FC<StoreProps> = ({ name }) => {
   const dispatch = useDispatch();
   const classes = useStyles();
   const [value, setValue] = useState(0);
@@ -98,7 +97,7 @@ const Header: React.FC<StoreProps> = ({ name, phone }) => {
     navigator.clipboard.writeText(window.location.href);
 
     const modal = {
-      title: "Thanks For Sharing!",
+      title: "Thanks for sharing!",
       message: "Link was copied to clip board.",
       showModal: true,
     };
@@ -168,7 +167,7 @@ const Header: React.FC<StoreProps> = ({ name, phone }) => {
               offset={-10}
               duration={500}
             >
-              <TabPanel value={value} index={0} onClick={() => setValue(0)}>
+              <TabPanel value={value} index={1} onClick={() => setValue(1)}>
                 <Tab
                   label="Food"
                   icon={<RestaurantIcon />}
@@ -185,7 +184,7 @@ const Header: React.FC<StoreProps> = ({ name, phone }) => {
               offset={-10}
               duration={500}
             >
-              <TabPanel value={value} index={1} onClick={() => setValue(1)}>
+              <TabPanel value={value} index={2} onClick={() => setValue(2)}>
                 <Tab
                   label="Drinks"
                   icon={<LocalDrinkIcon />}
@@ -202,7 +201,7 @@ const Header: React.FC<StoreProps> = ({ name, phone }) => {
               offset={-10}
               duration={500}
             >
-              <TabPanel value={value} index={2} onClick={() => setValue(2)}>
+              <TabPanel value={value} index={3} onClick={() => setValue(3)}>
                 <Tab
                   label="Order"
                   icon={<ShoppingBasket />}

@@ -29,7 +29,7 @@ const slice = createSlice({
     },
     removeOrder: (state: any, action: any) => {
       if (action.payload.quantity >= 1) {
-        _.find(state.order, { name: action.payload.name }).quantity =
+        _.find(state?.order, { name: action.payload.name }).quantity =
           action.payload.quantity;
       } else {
         _.remove(state.order, {
@@ -39,7 +39,6 @@ const slice = createSlice({
     },
     cancelOrder: (state: any) => {
       state.order = initialOrder;
-      localStorage.removeItem("order");
     },
   },
 });

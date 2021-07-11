@@ -50,7 +50,7 @@ const Store: React.FC = () => {
     <>
       <CssBaseline />
       <Container maxWidth="lg" id="about">
-        <Header name={store.name} phone={store.phone} />
+        <Header name={store.name} />
         <main className={classes.position}>
           {store?.name && (
             <Card className={classes.card}>
